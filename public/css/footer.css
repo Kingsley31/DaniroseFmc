@@ -1,0 +1,15 @@
+
+.footer-nav{
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-nav li{
+    margin: 0px;
+    padding: 0px;
+    text-decoration:none ;
+}
+
+.footer-nav li a{
+    color: #000000;
+}

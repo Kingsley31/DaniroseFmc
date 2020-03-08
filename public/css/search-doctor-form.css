@@ -1,0 +1,29 @@
+.booking-form-container {
+    width: 100%;
+}
+
+.booking-form-container .row button{
+    width: 100%;
+}
+
+.doctor-card img{
+    height: 150px;
+}
+
+.doctor-card p{
+    font-size: 18px;
+}
+
+.doctor-card h5{
+    font-size: 22px;
+}
+
+
+@media(min-width: 768px) {
+
+    .booking-form-container{
+        width: 650px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

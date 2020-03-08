@@ -1,0 +1,11 @@
+a {
+    color: rgb(144, 49, 158);
+}
+
+@media(min-width: 768px) {
+
+    a {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

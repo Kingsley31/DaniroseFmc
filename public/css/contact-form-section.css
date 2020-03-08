@@ -1,0 +1,12 @@
+.contact-container{
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+           
+    .contact-container{
+        width: 650px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
