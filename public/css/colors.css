@@ -1,0 +1,23 @@
+.bg-main{
+    background-color: #f2f2f2;
+}
+
+.bg-ash{
+    background-color: #f2f2f2;
+}
+
+.bg-accent{
+    background-color: rgb(234, 80, 86);
+}
+
+.text-white{
+    color: #000000;
+}
+
+.text-main{
+    color:  rgb(144, 49, 158);
+}
+
+.text-accent{
+    color: rgb(234, 80, 86);
+}

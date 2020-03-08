@@ -8,17 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/colors.css')}}">
 
     <title>Danirose Fmc</title>
     <style>
-        .bg-main{
-            background-color: #f2f2f2;
-        }
-
-        .bg-ash{
-            background-color: #f2f2f2;
-        }
-
+        
         .btn-main {
             color: #fff;
             background-color: rgb(144, 49, 158);
@@ -27,18 +21,6 @@
 
         .bg-accent{
             background-color: rgb(234, 80, 86);
-        }
-
-        .text-white{
-            color: #000000;
-        }
-
-        .text-main{
-            color:  rgb(144, 49, 158);
-        }
-
-        .text-accent{
-            color: rgb(234, 80, 86);
         }
 
         .line-h {
