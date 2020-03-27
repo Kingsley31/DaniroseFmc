@@ -8,6 +8,12 @@ class Doctor extends Model
 {
     protected $fillable=[
         'user_id',
-        'specilization',
+        'specialization',
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

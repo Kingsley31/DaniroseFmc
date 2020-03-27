@@ -11,9 +11,17 @@ class Appointment extends Model
         'doctor_id',
         'facility_type',
         'complaint',
+        'specialization',
         'date',
+        'time',
         'doctors_summary',
         'amount',
         'status',
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

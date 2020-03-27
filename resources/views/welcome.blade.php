@@ -3,6 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -22,28 +23,7 @@
   </head>
   <body>
     <div class="p-0 m-0">
-        <header>
-            <div class="w-25 mx-auto mt-5">
-                <img src="../images/danirose-logo.JPG" class="image-fluid d-block mx-auto" style="height: 90px;"   alt="">
-            </div>
-            <hr class="line-h bg-ash mt-3">
-            <nav class="my-2 sticky-top">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                      </li>
-                </ul>
-            </nav>
-        </header>
+        @include('includes.header')
         <div class="slider-container bg-accent carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -85,7 +65,7 @@
                 <div class="col-sm-12 col-md-6">
                     <h1 class="booking_title">Book A Specialist</h1>
                     <p class="booking_body">Do you know that you can book a specialist now</p>
-                    <button class="btn btn-main btn-lg">Get Started</button>
+                    <a href="/appointment/home/create" class="btn btn-main btn-lg">Get Started</a>
                 </div>
                 <div class="bg-doctor-img d-none d-md-block col-sm-12 col-md-6">
                     
@@ -93,106 +73,42 @@
             </div>
         </div>
         <div class="container-fluid bg-main">
-            <div class="booking-container bg-main py-4">
+            <div class="booking-container bg-main py-5">
                 <h1 class="text-center mb-4 mb-md-5"> Book A Specialist</h1>
                 <div class="booking-form-container">
-                    <form action="#" id="search-specialist-form"></form>
+                    <form action="/appointment/home/create" id="search-specialist-form">
                         <div class="row justify-content-center">
                             <div class="col-sm-12 col-md-4 mb-3">
                                 <label for="staticEmail2" class="sr-only">Specialization</label>
-                                <select name="specialization" id="specialization" class="form-control">
+                                <select name="specialization" id="specialization" class="form-control @error('city') is-invalid @enderror">
                                     <option value="0">Choose Specilization</option>
-                                    <option value="1">Obstetrics and gynaecology</option>
-                                    <option value="2">Surgeon</option>
-                                    <option value="3">Paediatrics</option>
-                                    <option value="3">Paediatrics</option>
-                                    <option value="4">Dermatologist</option>
-                                    <option value="5">Orthopaedics</option>
-                                    <option value="6">Ophthalmologist</option>
-                                    <option value="7">Family medicine</option>
+                                    @foreach ($specializations as $specialization)
+                                        <option value="{{$specialization->name}}">{{$specialization->name}}</option>
+                                    @endforeach
                                 </select>
+                                @error('specialization')
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                               </div>
                               <div class="col-sm-12 col-md-4 mb-3">
                                 <label for="staticEmail2" class="sr-only">City</label>
-                                <select name="city" id="specialization" class="form-control">
+                                <select name="city" id="specialization"  class="form-control @error('city') is-invalid @enderror">
                                     <option value="0">Choose City</option>
-                                    <option value="1">Umuahia</option>
+                                    @foreach ($cities as $city)
+                                        <option value="{{$city->city_name}}">{{$city->city_name}}</option>
+                                    @endforeach
                                 </select>
+                                @error('city')
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                               </div>
                               <div class="col-sm-12 col-md-4 mb-1">
-                                <button type="submit" class="btn btn-main">Search</button>
+                                <button type="submit" class="btn btn-main">Start</button>
                               </div>
                         </div>
                     </form>
                 </div>
-                <div class="container pt-5">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3 mb-5">
-                            <div class="card p-2 doctor-card">
-                                <img class="card-img-top" src="../images/doctoora-home-slider-mobile-1.png">
-                                <h5 class="mt-1 mb-0">Dr Mike Kelechukwu</h5>
-                                <p>Orthopaedics</p>
-                                <a href="#" class="btn btn-main">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
         </div>
         <div class="container pt-5">
@@ -241,52 +157,7 @@
                 
             </form>
         </div>
-        <div class="container-fluid pt-5 pb-2 bg-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 col-md-4 mb-4">
-                        <h5 class="text-main mb-4">Danirose FCM</h5>
-                        <ul class="footer-nav">
-                            <li class="nav-item d-block mb-3"><a href="#">Home</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Login</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">About</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Services</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <h5 class="text-main mb-4">Contact</h5>
-                        <ul class="footer-nav">
-                            <li class="nav-item d-block mb-3"><a href="#">support@danirosefmc.com</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Or call 0812234455</a></li>
-                        </ul>
-                        <h5 class="text-main mb-4 mt-4">Social Media</h5>
-                        <div>
-                            <a href="#" style="color: blue;"><i class="fa fa-facebook fa-lg "></i></a>
-                            <a href="#" style="color: rgb(0, 102, 255);"><i class="fa fa-twitter fa-lg "></i></a>
-                            <a href="#" class="text-accent"><i class="fa fa-instagram fa-lg "></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <h5 class="text-main mb-4">Legal</h5>
-                        <ul class="footer-nav">
-                            <li class="nav-item d-block mb-3"><a href="#">Terms and condition</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Privacy Policy</a></li>
-                            <li class="nav-item d-block mb-3"><a href="#">Faq</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-dark text-right">© Danirose FMC 2020 - All rights reserved</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    
-
-    
+        @include('includes.footer')
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -1,5 +1,6 @@
 <?php
-
+use App\SystemModels\Specialization;
+use App\SystemModels\City;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +13,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $specializations=Specialization::all();
+    $cities=City::all();
+    return view('welcome',['specializations'=>$specializations,'cities'=>$cities]);
 });
+
+Route::get('/adddoctor/create','AddDoctorController@create');
+
+Route::post('/adddoctor', 'AddDoctorController@store');
+
+
+Route::get('/appointment/home/create', 'AppointBookingController@homeCreate');
+
+Route::post('/appointment/home/book','AppointBookingController@homeBook');
+
+Route::get('/admin/view/appointments','ViewAppointmentsController@adminViewAppointments');
+
+
+Route::get('/reset-password/{code}/{email}','ChangePasswordController@showChangePasswordForm');
+
