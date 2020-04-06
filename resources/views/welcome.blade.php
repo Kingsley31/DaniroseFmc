@@ -18,6 +18,21 @@
     <link rel="stylesheet" href="{{asset('css/nav-links.css')}}">
     <link rel="stylesheet" href="{{asset('css/contact-form-section.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <style>
+        
+
+        .works-icon{
+            width: 40px;
+            height: 50px;
+        }
+        
+        @media(min-width: 768px) {
+            .works-icon{
+                width: 50px;
+                height: 70px;
+            }
+        }
+    </style>
 
     <title>Danirose Fmc</title>
   </head>
@@ -64,7 +79,7 @@
             <div class="row mt-5">
                 <div class="col-sm-12 col-md-6">
                     <h1 class="booking_title">Book A Specialist</h1>
-                    <p class="booking_body">Do you know that you can book a specialist now</p>
+                    <p class="booking_body">You are one click away from booking a specialist, just click the button to get started</p>
                     <a href="/appointment/home/create" class="btn btn-main btn-lg">Get Started</a>
                 </div>
                 <div class="bg-doctor-img d-none d-md-block col-sm-12 col-md-6">
@@ -74,7 +89,7 @@
         </div>
         <div class="container-fluid bg-main">
             <div class="booking-container bg-main py-5">
-                <h1 class="text-center mb-4 mb-md-5"> Book A Specialist</h1>
+                <h1 class="text-center mb-4 mb-md-5"> Book Now</h1>
                 <div class="booking-form-container">
                     <form action="/appointment/home/create" id="search-specialist-form">
                         <div class="row justify-content-center">
@@ -115,19 +130,19 @@
             <h1 class="text-center booking_title mb-5">How It Works</h1>
             <div class="row pt-sm-0 justify-content-md-center pt-md-4 pb-sm-5 pb-md-5">
                 <div class="col-6 col-md-3 mb-3">
-                    <img class="image-fluid d-block mx-auto mt-3 mb-2" src="../images/danirose-search.svg" alt="">
+                    <img class="image-fluid works-icon d-block mx-auto mb-2" src="../images/danirose-search.svg" alt="">
                     <h5 class="text-center">Enter search criteria</h5>
                 </div>
                 <div class="col-6 col-md-3 mb-3">
-                    <img class="image-fluid d-block mx-auto mb-2" src="../images/danirose-selection.svg" alt="">
+                    <img class="image-fluid works-icon d-block mx-auto mb-2" src="../images/danirose-selection.svg" alt="">
                     <h5 class="text-center">Choose preferred Specialist</h5>
                 </div>
                 <div class="col-6 col-md-3 col-md-3 mb-3">
-                    <img class="image-fluid d-block mx-auto mb-2" src="../images/danirose-select-consultation.svg" alt="">
+                    <img class="image-fluid works-icon d-block mx-auto mb-2" src="../images/danirose-select-consultation.svg" alt="">
                     <h5 class="text-center">Enter booking detail</h5>
                 </div>
                 <div class="col-6 col-md-3 mb-3">
-                    <img class="image-fluid d-block mx-auto mb-2" src="../images/danirose-make-payment.svg" alt="">
+                    <img class="image-fluid works-icon d-block mx-auto mb-2" src="../images/danirose-make-payment.svg" alt="">
                     <h5 class="text-center">Admin Feedback Admin</h5>
                 </div>
             </div>

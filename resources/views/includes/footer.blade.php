@@ -29,7 +29,7 @@
                 <ul class="footer-nav">
                     <li class="nav-item d-block mb-3"><a href="#">Terms and condition</a></li>
                     <li class="nav-item d-block mb-3"><a href="#">Privacy Policy</a></li>
-                    <li class="nav-item d-block mb-3"><a href="#">Faq</a></li>
+                    <li class="nav-item d-block mb-3"><a href="#">FAQ</a></li>
                 </ul>
             </div>
         </div>

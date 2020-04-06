@@ -1,6 +1,6 @@
 <header>
     <div class="w-25 mx-auto mt-5">
-        <img src="{{asset('images/logo1.JPEG')}}" class="image-fluid d-block mx-auto" style="height: 90px;"   alt="">
+        <img src="{{asset('images/logo1.jpeg')}}" class="image-fluid d-block mx-auto" style="height: 90px;"   alt="">
     </div>
     <hr class="line-h bg-ash mt-3">
     <nav class="my-2 sticky-top">
@@ -15,8 +15,11 @@
               <a class="nav-link" href="/services">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-              </li>
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
         </ul>
     </nav>
 </header>

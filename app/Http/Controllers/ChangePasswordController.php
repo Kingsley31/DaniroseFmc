@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\ChangePassword;
+use App\SystemModels\ChangePassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
@@ -62,7 +62,8 @@ class ChangePasswordController extends Controller
             $user=User::where('email',$email)->first();
             $user->password=Hash::make($password);
             $user->save();
-            return redirect()->intended('/login')->with('success', 'Password changed successfully!! Please Login');
+            //$change_password->delete();
+            return back()->with('status','Password changed successfully');
         }
 
         return redirect()->away('https://www.google.com');

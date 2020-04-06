@@ -1,5 +1,9 @@
 a {
-    color: rgb(144, 49, 158);
+    color:#000000;
+}
+
+a:hover{
+    color: rgb(144, 49, 158); 
 }
 
 @media(min-width: 768px) {
